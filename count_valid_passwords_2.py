@@ -6,18 +6,11 @@
 
 import re
 
-# Regex group #'s
-CHAR_POS = 1
-NOT_CHAR = 2
-CHAR = 3
-PW = 4
 
-
-def check_password(min_val, max_val, char, password):
-    char_count = password.count(char)
-    if char_count >= int(min_val) and char_count <= int(max_val):
+def check_password(has_char, not_char, char, password):
+    if password[int(has_char) - 1] is char and \
+            password[int(not_char) - 1] is not char:
         return True
-
     return False
 
 
