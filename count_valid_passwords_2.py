@@ -1,7 +1,16 @@
 # Count valid passwords in pw_input accordign to rules:
-# 3-4 b: wgzbpwpbj  Min 3  'b's, max 4 'b's - Invalid
-# 1-6 z: mzzzbrzz  Min 1 'z's max 6 'z's - Valid
+# 1-3 a: abcde is valid: position 1 contains a and position 3 does not.
+# 1-3 b: cdefg is invalid: neither position 1 nor position 3 contains b.
+# 2-9 c: ccccccccc is invalid: both position 2 and position 9 contain c.
+
+
 import re
+
+# Regex group #'s
+CHAR_POS = 1
+NOT_CHAR = 2
+CHAR = 3
+PW = 4
 
 
 def check_password(min_val, max_val, char, password):
