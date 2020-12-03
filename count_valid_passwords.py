@@ -7,5 +7,16 @@
 # Parse each line with regex to get min and max, pw
 # Use those values to determine if line is valid or not based on parms
 # Increment counter for each valid pw
+import re
 
+# Regex group #'s
+MIN = 1
+MAX = 2
+CHAR = 3
+PW = 4
 
+pw_input = []
+with open('pw_input', 'r') as f:
+    pw_input = f.read().split('\n')
+
+print(pw_input)
