@@ -15,8 +15,20 @@ MAX = 2
 CHAR = 3
 PW = 4
 
+
+def check_password(min, max, char, password):
+    pass
+
+
 pw_input = []
 with open('pw_input', 'r') as f:
     pw_input = f.read().split('\n')
 
-print(pw_input)
+valid_pws = 0
+
+for line in pw_input:
+    matches = re.search(r"(\d)-(\d)\s+{w}:\s+(\w+)", line).groups()
+    if check_password(*matches):
+        valid_pws += 1
+
+print(valid_pws)
