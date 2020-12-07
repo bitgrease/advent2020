@@ -7,10 +7,11 @@
 import re
 
 
-def check_password(has_char, not_char, char, password):
-    if password[int(has_char) - 1] is char and \
-            password[int(not_char) - 1] is not char:
-        return True
+def check_password(char1, char2, char, password):
+    if password[int(char1) - 1] is char or \
+            password[int(char2) - 1] is char:
+        if password[int(char1) - 1] is not password[int(char2) - 1]:
+            return True
     return False
 
 
